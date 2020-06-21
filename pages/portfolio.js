@@ -19,6 +19,11 @@ const Portfolio = () => {
             </Container>
           </Wrapper>
         </PageSection>
+        <PageSection style={{ backgroundColor: "red" }}>
+          <Wrapper>
+            <Container></Container>
+          </Wrapper>
+        </PageSection>
       </Page>
     </Grommet>
   );

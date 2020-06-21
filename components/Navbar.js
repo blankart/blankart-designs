@@ -1,4 +1,5 @@
-import { Nav, Box, Button, Image } from "grommet";
+import { Nav, Box, Button, Image, ResponsiveContext } from "grommet";
+import { useContext } from "react";
 import Link from "next/link";
 
 const items = [
@@ -17,6 +18,7 @@ const items = [
 ];
 
 const Navbar = () => {
+  const size = useContext(ResponsiveContext);
   return (
     <Nav
       align="center"
@@ -27,7 +29,11 @@ const Navbar = () => {
       pad={{ horizontal: "xsmall", top: "large", bottom: "large" }}
     >
       <Box align="center" justify="center">
-        <Image src="/Logo-Page.png" fill="horizontal" />
+        <Link href="/">
+          <a>
+            <Image src="/Logo-Page.png" fill="horizontal" />
+          </a>
+        </Link>
       </Box>
       <Box
         align="center"
@@ -38,6 +44,7 @@ const Navbar = () => {
         gap="medium"
       >
         {items &&
+          size === "large" &&
           items.map((item) => (
             <Link key={item.path} href={item.path}>
               <Button

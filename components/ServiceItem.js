@@ -1,15 +1,8 @@
 import { Box, Text, Image, Paragraph } from "grommet";
 
-const ServiceItem = ({ key, src, title, content, ...args }) => {
+const ServiceItem = ({ src, title, content, ...args }) => {
   return (
-    <Box
-      {...args}
-      key={key}
-      align="center"
-      justify="center"
-      gap="small"
-      width="medium"
-    >
+    <Box {...args} align="center" justify="center" gap="small" width="medium">
       <Image src={src} />
       <Text color="background" size="xxlarge" weight="bold" textAlign="center">
         {title}
