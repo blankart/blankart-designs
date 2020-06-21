@@ -1,6 +1,16 @@
 import { Box } from "grommet";
 
-const PageSection = ({ children, ...args }) => {
+const PageSection = ({ children, background, ...args }) => {
+  const style = background
+    ? {
+        style: {
+          backgroundImage: `url('${background}')`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        },
+      }
+    : {};
   return (
     <Box
       align="center"
@@ -8,6 +18,7 @@ const PageSection = ({ children, ...args }) => {
       pad={{ left: "xlarge", right: "xlarge", bottom: "xlarge" }}
       overflow="auto"
       direction="row-responsive"
+      {...style}
       {...args}
     >
       {children}

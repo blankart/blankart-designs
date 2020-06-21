@@ -11,7 +11,7 @@ const Portfolio = () => {
   return (
     <Grommet full theme={indexTheme}>
       <Page>
-        <PageSection>
+        <PageSection background="/BG.png">
           <Wrapper>
             <Container>
               <Navbar />
