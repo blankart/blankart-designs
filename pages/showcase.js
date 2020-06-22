@@ -8,11 +8,11 @@ import Page from "../components/Page";
 import MainHeading from "../components/MainHeading";
 import { Grommet } from "grommet";
 
-const Portfolio = () => {
+const Showcase = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Portfolio - Blankart Designs</title>
+        <title>Showcase - Blankart Designs</title>
       </Head>
       <Grommet full theme={indexTheme}>
         <Page>
@@ -20,7 +20,7 @@ const Portfolio = () => {
             <Wrapper>
               <Container>
                 <Navbar />
-                <MainHeading animation="fadeIn">PORTFOLIO PAGE.</MainHeading>
+                <MainHeading animation="fadeIn">SHOWCASE PAGE.</MainHeading>
               </Container>
             </Wrapper>
           </PageSection>
@@ -35,4 +35,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Showcase;
