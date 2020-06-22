@@ -45,6 +45,10 @@ export default ({ slug, description, images }) => {
               />
               <SideText>
                 <CardImage
+                  animation={{
+                    type: "slideUp",
+                    delay: 200,
+                  }}
                   src={images}
                   style={{
                     width: "1200px",
