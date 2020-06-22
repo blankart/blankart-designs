@@ -8,7 +8,7 @@ What do we offer
 
 # content1
 
-We tend to give the best among the best of designs in every category from simple yet alluring logos to complex and first-class designs. The edge of this company is the designs. Our power is our imagination. We are here to help you 24/7, to give you the best service and assistance.
+Let your imagination run wild as we turn your plans into extraordinary products with the best quality. From designing t-shirts to building websites, Blankart Designs expertise in providing professional and top notch products while ensuring the value of our customers and pleasant experiences for our users. In Blankart Designs, we are all artists, creators, and visionaries ready to give the best service and assistance to help cater your technoligical needs.
 
 # heading2
 
