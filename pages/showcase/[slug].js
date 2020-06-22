@@ -86,7 +86,9 @@ export function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const portfolioDir = fs.readdirSync("./markdown/Portfolio");
+  const portfolioDir = fs
+    .readdirSync("./markdown/Portfolio")
+    .filter((file) => file !== "Heading.md");
   const paths = portfolioDir.map((val) => ({
     params: {
       slug: val,
