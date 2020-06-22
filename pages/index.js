@@ -57,7 +57,7 @@ const Index = ({
                 overflow="visible"
               >
                 <ImageSection>
-                  <CardImage src={indexImages} />
+                  <CardImage src={indexImages} controls={false} />
                   <SideText>
                     <BlockText
                       title={descriptions.heading1}

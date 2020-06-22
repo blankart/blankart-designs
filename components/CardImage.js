@@ -1,7 +1,7 @@
 import { Carousel, Box, ResponsiveContext } from "grommet";
 import { useContext, useMemo } from "react";
 
-const CardImage = ({ src, ...args }) => {
+const CardImage = ({ src, controls, ...args }) => {
   const size = useContext(ResponsiveContext);
   const dimension = useMemo(
     () => ({
@@ -12,7 +12,7 @@ const CardImage = ({ src, ...args }) => {
   );
   return (
     <Box fill={size === "small" ? false : "horizontal"}>
-      <Carousel controls={false} play={8000}>
+      <Carousel controls={controls} play={8000}>
         {src &&
           src.map((image) => (
             <Box
