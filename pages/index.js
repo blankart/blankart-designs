@@ -15,8 +15,6 @@ import SideText from "../components/SideText";
 import BlockText from "../components/BlockText";
 import ColumnText from "../components/ColumnText";
 
-const TEXTS = ["HEY", "HI"];
-
 const servicesList = [
   {
     title: "T-Shirt Designs",
@@ -45,10 +43,6 @@ const servicesList = [
 ];
 
 const Index = () => {
-  const [index, setIndex] = useState(0);
-  useEffect(() => {
-    const intervalId = setInterval(() => setIndex((index) => index + 1), 3000);
-  });
   return (
     <React.Fragment>
       <Head>
@@ -62,7 +56,7 @@ const Index = () => {
               <Container>
                 <Navbar />
                 <MainHeading animation="fadeIn">
-                  DIGITAL ENTHUSIAST.
+                  WE ARE BLANKART DESIGNS.
                 </MainHeading>
                 <Services animation="slideUp" data={servicesList} />
               </Container>
