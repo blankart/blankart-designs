@@ -12,7 +12,7 @@ import Portfolio from "../../components/Portfolio";
 import fs from "fs";
 import md2json from "md-2-json";
 
-const Showcase = ({ categories }) => {
+const Showcase = ({ categories, heading }) => {
   return (
     <React.Fragment>
       <Head>
@@ -24,9 +24,7 @@ const Showcase = ({ categories }) => {
             <Wrapper>
               <Container>
                 <Navbar />
-                <MainHeading animation="fadeIn">
-                  THIS IS WHAT WE'VE DOING FOR THE PAST YEARS.
-                </MainHeading>
+                <MainHeading animation="fadeIn">{heading}</MainHeading>
               </Container>
             </Wrapper>
           </PageSection>
@@ -59,7 +57,9 @@ const Showcase = ({ categories }) => {
 };
 
 export function getStaticProps() {
-  const categoryItems = fs.readdirSync("./markdown/Portfolio");
+  const categoryItems = fs
+    .readdirSync("./markdown/Portfolio")
+    .filter((val) => val !== "Heading.md");
   let categories = [];
   for (const [index, category] of categoryItems.entries()) {
     let fixObj = {};
@@ -74,9 +74,11 @@ export function getStaticProps() {
     fixObj["label"] = category;
     categories.push(fixObj);
   }
+  const heading = fs.readFileSync("./markdown/Portfolio/Heading.md", "utf8");
   return {
     props: {
       categories,
+      heading,
     },
   };
 }
