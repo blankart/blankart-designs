@@ -21,6 +21,7 @@ const Navbar = () => {
   const size = useContext(ResponsiveContext);
   return (
     <Nav
+      animation="slideUp"
       align="center"
       flex={false}
       justify="center"

@@ -18,6 +18,7 @@ const MainHeading = ({ children, ...args }) => {
       width="xxlarge"
       direction="row"
       pad={{ top: "large" }}
+      {...args}
     >
       <Heading
         style={{

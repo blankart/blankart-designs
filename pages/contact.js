@@ -20,7 +20,7 @@ const Contact = () => {
             <Wrapper>
               <Container>
                 <Navbar />
-                <MainHeading>CONTACT PAGE.</MainHeading>
+                <MainHeading animation="fadeIn">CONTACT PAGE.</MainHeading>
               </Container>
             </Wrapper>
           </PageSection>

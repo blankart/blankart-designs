@@ -23,6 +23,8 @@ const Services = ({ data, ...args }) => {
         size === "large" &&
         largeSlicedData.map((newData) => (
           <Box
+            {...args}
+            key={JSON.stringify(newData)}
             flex={true}
             align="center"
             justify="center"
@@ -45,6 +47,8 @@ const Services = ({ data, ...args }) => {
         size !== "large" &&
         slicedData.map((newData) => (
           <Box
+            {...args}
+            key={JSON.stringify(newData)}
             flex={true}
             align="center"
             justify="center"

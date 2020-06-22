@@ -1,4 +1,5 @@
-import { Grommet, Box, Text, Paragraph } from "grommet";
+import { Grommet } from "grommet";
+import { useEffect, useState } from "react";
 import indexTheme from "../themes/indexTheme";
 import Navbar from "../components/Navbar";
 import PageSection from "../components/PageSection";
@@ -13,6 +14,8 @@ import ImageSection from "../components/ImageSection";
 import SideText from "../components/SideText";
 import BlockText from "../components/BlockText";
 import ColumnText from "../components/ColumnText";
+
+const TEXTS = ["HEY", "HI"];
 
 const servicesList = [
   {
@@ -42,10 +45,15 @@ const servicesList = [
 ];
 
 const Index = () => {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const intervalId = setInterval(() => setIndex((index) => index + 1), 3000);
+  });
   return (
     <React.Fragment>
       <Head>
         <title>Blankart Designs</title>
+        <link href="/animationheading.css" rel="stylesheet" />
       </Head>
       <Grommet full theme={indexTheme}>
         <Page>
@@ -53,8 +61,10 @@ const Index = () => {
             <Wrapper>
               <Container>
                 <Navbar />
-                <MainHeading>DIGITAL ENTHUSIAST. </MainHeading>
-                <Services data={servicesList} />
+                <MainHeading animation="fadeIn">
+                  DIGITAL ENTHUSIAST.
+                </MainHeading>
+                <Services animation="slideUp" data={servicesList} />
               </Container>
             </Wrapper>
           </PageSection>
@@ -63,7 +73,10 @@ const Index = () => {
             style={{ backgroundColor: "#2b141a", marginTop: "0" }}
           >
             <Wrapper>
-              <Container overflow="visible">
+              <Container
+                animation={{ type: "slideUp", delay: "100" }}
+                overflow="visible"
+              >
                 <ImageSection>
                   <CardImage src="/t-shirt mockup.jpg" />
                   <SideText>

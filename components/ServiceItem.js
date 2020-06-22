@@ -1,10 +1,32 @@
 import { Box, ResponsiveContext, Text, Image, Paragraph } from "grommet";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const ServiceItem = ({ src, title, content, ...args }) => {
   const size = useContext(ResponsiveContext);
+  const [boxStyle, setBoxStyle] = useState({});
+  const handleHover = () => {
+    setBoxStyle({
+      transition: "transform 0.1s ease-in",
+      transform: "translateY(-15px)",
+    });
+  };
+  const handleMouseLeave = () => {
+    setBoxStyle({
+      transition: "transform 0.1s ease-in",
+      transform: "translateY(0px)",
+    });
+  };
   return (
-    <Box {...args} align="center" justify="center" gap="small" width="medium">
+    <Box
+      {...args}
+      onMouseEnter={handleHover}
+      onMouseLeave={handleMouseLeave}
+      style={boxStyle}
+      align="center"
+      justify="center"
+      gap="small"
+      width="medium"
+    >
       <Image
         src={src}
         style={{

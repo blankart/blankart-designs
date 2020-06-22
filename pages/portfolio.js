@@ -20,7 +20,7 @@ const Portfolio = () => {
             <Wrapper>
               <Container>
                 <Navbar />
-                <MainHeading>PORTFOLIO PAGE.</MainHeading>
+                <MainHeading animation="fadeIn">PORTFOLIO PAGE.</MainHeading>
               </Container>
             </Wrapper>
           </PageSection>
