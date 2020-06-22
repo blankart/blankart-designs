@@ -68,12 +68,9 @@ const Index = () => {
                   <CardImage src="/t-shirt mockup.jpg" />
                   <SideText>
                     <BlockText
-                      width="large"
                       title="What do we offer?"
                       content="
-                        Sample text here. Sample text here. Sample text here.
-                        Sample text here. Sample text here. Sample text here.
-                        Sample text here. Sample text here. Sample text here.
+                      Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                     "
                     />
                     <ColumnText>
@@ -81,18 +78,14 @@ const Index = () => {
                         width="medium"
                         title="Text"
                         content="
-                          Sample text here. Sample text here. Sample text here.
-                          Sample text here. Sample text here. Sample text here.
-                          Sample text here. Sample text here. Sample text here.
+                      Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                     "
                       />
                       <BlockText
                         width="medium"
                         title="Text"
                         content="
-                          Sample text here. Sample text here. Sample text here.
-                          Sample text here. Sample text here. Sample text here.
-                          Sample text here. Sample text here. Sample text here.
+                      Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                     "
                       />
                     </ColumnText>

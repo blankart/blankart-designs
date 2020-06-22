@@ -7,7 +7,8 @@ const BlockText = ({ title, content, width, ...args }) => {
     <Box
       align={size === "small" ? "center" : "start"}
       justify="center"
-      width={size === "small" ? "large" : width}
+      fill="horizontal"
+      //   width={size === "small" ? "large" : width}
       {...args}
     >
       <Text
@@ -21,7 +22,7 @@ const BlockText = ({ title, content, width, ...args }) => {
       >
         {title}
       </Text>
-      <Paragraph size={size} color="dark-4" textAlign="start">
+      <Paragraph fill="horizontal" size={size} color="dark-4" textAlign="start">
         {content}
       </Paragraph>
     </Box>
