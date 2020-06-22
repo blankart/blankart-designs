@@ -8,11 +8,11 @@ What do we offer
 
 # content1
 
-Let your imagination run wild as we turn your plans into extraordinary products with the best quality. From designing t-shirts to building websites, Blankart Designs expertise in providing professional and top notch products while ensuring the value of our customers and pleasant experiences for our users. In Blankart Designs, we are all artists, creators, and visionaries ready to give the best service and assistance to help cater your technoligical needs.
+Let your imagination run wild as we transform your plans into extraordinary products with the best quality. From designing t-shirts to building websites, Blankart Designs expertise in providing professional and top notch products while ensuring the value of our customers and pleasant experiences for our users. In Blankart Designs, we are all artists, creators, and visionaries ready to give the best service and assistance to help cater your technoligical needs.
 
 # heading2
 
-Text
+Quality
 
 # content2
 
