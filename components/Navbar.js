@@ -1,6 +1,8 @@
 import { Nav, Box, Button, Image, ResponsiveContext } from "grommet";
 import { useContext } from "react";
+import useHoverLift from "../hooks/useHoverLift";
 import Link from "next/link";
+import NavLink from "./NavLink";
 
 const items = [
   {
@@ -19,6 +21,7 @@ const items = [
 
 const Navbar = () => {
   const size = useContext(ResponsiveContext);
+  const [hoverStyle, hoverBinder] = useHoverLift("-5px");
   return (
     <Nav
       align="center"
@@ -51,23 +54,20 @@ const Navbar = () => {
           size === "large" &&
           items.map((item) => (
             <Link key={item.path} href={item.path}>
-              <Button
-                label={item.label}
-                active={false}
-                gap="small"
-                hoverIndicator={false}
-                plain={true}
-                color="background"
-              />
+              <a>
+                <NavLink label={item.label} />
+              </a>
             </Link>
           ))}
         <Button
           label="HIRE US"
+          {...hoverBinder}
           active={false}
           gap="medium"
           hoverIndicator={false}
           plain={false}
           style={{
+            ...hoverStyle,
             backgroundColor: "#0e0e0e",
             color: "white",
             fontWeight: "600",

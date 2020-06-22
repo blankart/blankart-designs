@@ -16,8 +16,11 @@ import SideText from "../components/SideText";
 import BlockText from "../components/BlockText";
 import ColumnText from "../components/ColumnText";
 import Testimonials from "../components/Testimonials";
+import Subheading from "../components/Subheading";
 
 const Index = ({
+  subheading,
+  indexImages,
   descriptions,
   services,
   testimonials,
@@ -37,6 +40,9 @@ const Index = ({
               <Container>
                 <Navbar />
                 <MainHeading animation="fadeIn">{heading}</MainHeading>
+                <Subheading animation={{ type: "fadeIn", delay: "150" }}>
+                  {subheading}
+                </Subheading>
                 <Services animation="slideUp" data={services} />
               </Container>
             </Wrapper>
@@ -51,7 +57,7 @@ const Index = ({
                 overflow="visible"
               >
                 <ImageSection>
-                  <CardImage src={descriptions.image} />
+                  <CardImage src={indexImages} />
                   <SideText>
                     <BlockText
                       title={descriptions.heading1}
@@ -76,7 +82,7 @@ const Index = ({
           </PageSection>
           <PageSection>
             <Wrapper>
-              <Container>
+              <Container animation={{ type: "slideUp", delay: "200" }}>
                 <ImageSection>
                   <SideText>
                     <BlockText
@@ -97,11 +103,15 @@ const Index = ({
 
 export function getStaticProps() {
   const heading = fs.readFileSync("./markdown/Heading.md", "utf8");
+  const subheading = fs.readFileSync("./markdown/Subheading.md", "utf8");
   const servicesFile = fs.readdirSync("./markdown/Services");
   const descriptionsFile = fs.readFileSync(
     "./markdown/Descriptions.md",
     "utf8"
   );
+  const indexImages = fs
+    .readdirSync("./public/index images")
+    .map((dat) => `/index images/${dat}`);
   const testimonialsFile = fs.readdirSync("./markdown/Testimonials");
   const testimonialsText = fs.readFileSync(
     "./markdown/Testimonials.md",
@@ -141,10 +151,12 @@ export function getStaticProps() {
   return {
     props: {
       heading,
+      subheading,
       services,
       testimonialsText,
       testimonials,
       descriptions,
+      indexImages,
     },
   };
 }
