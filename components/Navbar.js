@@ -61,6 +61,7 @@ const Navbar = () => {
               <Container align="center" pad="xlarge">
                 <Box
                   onClick={() => setOnShow(false)}
+                  focusIndicator={false}
                   animation={["fadeIn"]}
                   pad="xlarge"
                 >
@@ -70,6 +71,8 @@ const Navbar = () => {
                   items.map((item, index) => (
                     <Link href={item.path}>
                       <Box
+                        focusIndicator={false}
+                        align="center"
                         animation={{
                           type: "fadeIn",
                           delay: 100 * index,
@@ -79,6 +82,7 @@ const Navbar = () => {
                           margin="large"
                           style={{
                             fontSize: "35px",
+                            textAlign: "center",
                           }}
                           color="background-front"
                         >
