@@ -19,6 +19,7 @@ const BlockText = ({ title, content, width, ...args }) => {
             size === "small" ? "28px" : size === "medium" ? "45px" : "60px",
         }}
         textAlign="center"
+        size="xlarge"
       >
         {title}
       </Text>

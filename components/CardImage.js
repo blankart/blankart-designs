@@ -1,4 +1,4 @@
-import { Box, ResponsiveContext } from "grommet";
+import { Carousel, Box, ResponsiveContext } from "grommet";
 import { useContext, useMemo } from "react";
 
 const CardImage = ({ src, ...args }) => {
@@ -11,25 +11,32 @@ const CardImage = ({ src, ...args }) => {
     [size]
   );
   return (
-    <Box
-      align="center"
-      justify="center"
-      style={{
-        ...dimension,
-        overflow: "visible",
-      }}
-      background={{
-        image: `url('${src}')`,
-        size: "1500px",
-        position: "center",
-      }}
-      round="medium"
-      elevation="xlarge"
-      hoverIndicator={false}
-      overflow="visible"
-      flex="grow"
-      {...args}
-    />
+    <Box fill={size === "small" ? false : "horizontal"}>
+      <Carousel controls={false} play={8000}>
+        {src &&
+          src.map((image) => (
+            <Box
+              align="center"
+              justify="center"
+              style={{
+                ...dimension,
+                overflow: "visible",
+              }}
+              background={{
+                image: `url('${image}')`,
+                size: "1500px",
+                position: "center",
+              }}
+              round="medium"
+              elevation="xlarge"
+              hoverIndicator={false}
+              overflow="visible"
+              flex="grow"
+              {...args}
+            />
+          ))}
+      </Carousel>
+    </Box>
   );
 };
 

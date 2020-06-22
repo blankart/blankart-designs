@@ -4,7 +4,7 @@ import { useContext } from "react";
 const Testimonials = ({ data, ...args }) => {
   const size = useContext(ResponsiveContext);
   return (
-    <Carousel pad="large" play={5000}>
+    <Carousel pad="large" controls="selectors" play={5000}>
       {data &&
         data.map((testimonial) => (
           <Box align="center" justify="center" margin="xlarge">

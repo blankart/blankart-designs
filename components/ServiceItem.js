@@ -1,31 +1,19 @@
 import { Box, ResponsiveContext, Text, Image, Paragraph } from "grommet";
-import { useContext, useState } from "react";
+import useHoverLift from "../hooks/useHoverLift";
+import { useContext } from "react";
 
 const ServiceItem = ({ src, title, content, ...args }) => {
   const size = useContext(ResponsiveContext);
-  const [boxStyle, setBoxStyle] = useState({});
-  const handleHover = () => {
-    setBoxStyle({
-      transition: "transform 0.1s ease-in",
-      transform: "translateY(-15px)",
-    });
-  };
-  const handleMouseLeave = () => {
-    setBoxStyle({
-      transition: "transform 0.1s ease-in",
-      transform: "translateY(0px)",
-    });
-  };
+  const [hoverStyle, hoverBinder] = useHoverLift();
   return (
     <Box
       {...args}
-      onMouseEnter={handleHover}
-      onMouseLeave={handleMouseLeave}
-      style={boxStyle}
+      {...hoverBinder}
       align="center"
       justify="center"
       gap="small"
       width="medium"
+      style={hoverStyle}
     >
       <Image
         src={src}
