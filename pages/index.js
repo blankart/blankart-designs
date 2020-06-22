@@ -40,7 +40,7 @@ const Index = ({
               <Container>
                 <Navbar />
                 <MainHeading animation="fadeIn">{heading}</MainHeading>
-                <Subheading animation={{ type: "fadeIn", delay: "150" }}>
+                <Subheading animation={{ type: "fadeIn", delay: "100" }}>
                   {subheading}
                 </Subheading>
                 <Services animation="slideUp" data={services} />
