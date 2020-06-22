@@ -26,8 +26,6 @@ const Services = ({ data, ...args }) => {
             {...args}
             key={JSON.stringify(newData)}
             flex={true}
-            align="center"
-            justify="center"
             width="xxlarge"
             direction={size === "large" || size === "medium" ? "row" : "column"}
             gap="xlarge"
