@@ -20,7 +20,7 @@ const CardImage = ({ src, ...args }) => {
       }}
       background={{
         image: `url('${src}')`,
-        size: "1000px",
+        size: "1500px",
         position: "center",
       }}
       round="medium"
