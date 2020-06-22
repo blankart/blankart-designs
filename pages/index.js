@@ -1,5 +1,6 @@
 import { Grommet } from "grommet";
-import { useEffect, useState } from "react";
+import fs from "fs";
+import md2json from "md-2-json";
 import indexTheme from "../themes/indexTheme";
 import Navbar from "../components/Navbar";
 import PageSection from "../components/PageSection";
@@ -14,35 +15,15 @@ import ImageSection from "../components/ImageSection";
 import SideText from "../components/SideText";
 import BlockText from "../components/BlockText";
 import ColumnText from "../components/ColumnText";
+import Testimonials from "../components/Testimonials";
 
-const servicesList = [
-  {
-    title: "T-Shirt Designs",
-    image: "/T-Shirt Icon.png",
-    content:
-      "Sample text here. Sample text here. Sample text here. Sampletext here. Sample text here. Sample text here.",
-  },
-  {
-    title: "UI/UX Design",
-    image: "/Web Development.png",
-    content:
-      "Sample text here. Sample text here. Sample text here. Sampletext here. Sample text here. Sample text here.",
-  },
-  {
-    title: "React Development",
-    image: "/NodeReactJS Development.png",
-    content:
-      "Sample text here. Sample text here. Sample text here. Sampletext here. Sample text here. Sample text here.",
-  },
-  {
-    title: "Node Development",
-    image: "/NodeReactJS Development.png",
-    content:
-      "Sample text here. Sample text here. Sample text here. Sampletext here. Sample text here. Sample text here.",
-  },
-];
-
-const Index = () => {
+const Index = ({
+  descriptions,
+  services,
+  testimonials,
+  testimonialsText,
+  heading,
+}) => {
   return (
     <React.Fragment>
       <Head>
@@ -55,10 +36,8 @@ const Index = () => {
             <Wrapper>
               <Container>
                 <Navbar />
-                <MainHeading animation="fadeIn">
-                  WE ARE BLANKART DESIGNS.
-                </MainHeading>
-                <Services animation="slideUp" data={servicesList} />
+                <MainHeading animation="fadeIn">{heading}</MainHeading>
+                <Services animation="slideUp" data={services} />
               </Container>
             </Wrapper>
           </PageSection>
@@ -72,31 +51,40 @@ const Index = () => {
                 overflow="visible"
               >
                 <ImageSection>
-                  <CardImage src="/t-shirt mockup.jpg" />
+                  <CardImage src={descriptions.image} />
                   <SideText>
                     <BlockText
-                      title="What do we offer?"
-                      content="
-                      Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    "
+                      title={descriptions.heading1}
+                      content={descriptions.content1}
                     />
                     <ColumnText>
                       <BlockText
                         width="medium"
-                        title="Text"
-                        content="
-                      Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    "
+                        title={descriptions.heading2}
+                        content={descriptions.content2}
                       />
                       <BlockText
+                        title={descriptions.heading3}
+                        content={descriptions.content3}
                         width="medium"
-                        title="Text"
-                        content="
-                      Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    "
                       />
                     </ColumnText>
                   </SideText>
+                </ImageSection>
+              </Container>
+            </Wrapper>
+          </PageSection>
+          <PageSection>
+            <Wrapper>
+              <Container>
+                <ImageSection>
+                  <SideText>
+                    <BlockText
+                      title="Testimonials"
+                      content={testimonialsText}
+                    />
+                  </SideText>
+                  <Testimonials data={testimonials} />
                 </ImageSection>
               </Container>
             </Wrapper>
@@ -106,5 +94,59 @@ const Index = () => {
     </React.Fragment>
   );
 };
+
+export function getStaticProps() {
+  const heading = fs.readFileSync("./markdown/Heading.md", "utf8");
+  const servicesFile = fs.readdirSync("./markdown/Services");
+  const descriptionsFile = fs.readFileSync(
+    "./markdown/Descriptions.md",
+    "utf8"
+  );
+  const testimonialsFile = fs.readdirSync("./markdown/Testimonials");
+  const testimonialsText = fs.readFileSync(
+    "./markdown/Testimonials.md",
+    "utf8"
+  );
+  let descriptions = {};
+  let testimonials = [];
+  let services = [];
+  for (const [index, service] of servicesFile.entries()) {
+    let fixObj = {};
+    const data = md2json.parse(
+      fs.readFileSync(`./markdown/Services/${service}`, "utf8")
+    );
+    for (const propertyName in data) {
+      fixObj[propertyName] = data[propertyName].raw;
+    }
+    fixObj["title"] = service.split(".")[0];
+    services.push(fixObj);
+  }
+
+  for (const [index, testimonial] of testimonialsFile.entries()) {
+    let fixObj = {};
+    const data = md2json.parse(
+      fs.readFileSync(`./markdown/Testimonials/${testimonial}`, "utf8")
+    );
+    for (const propertyName in data) {
+      fixObj[propertyName] = data[propertyName].raw;
+    }
+    testimonials.push(fixObj);
+  }
+
+  const descData = md2json.parse(descriptionsFile);
+  for (const propertyName in descData) {
+    descriptions[propertyName] = descData[propertyName].raw;
+  }
+
+  return {
+    props: {
+      heading,
+      services,
+      testimonialsText,
+      testimonials,
+      descriptions,
+    },
+  };
+}
 
 export default Index;

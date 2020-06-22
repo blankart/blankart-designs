@@ -8,6 +8,7 @@ const App = ({ Component, pageProps }) => {
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap"
           rel="stylesheet"
         />
+        <link href="/hover.css" rel="stylesheet" />
       </Head>
       <Component {...pageProps} />
     </React.Fragment>
