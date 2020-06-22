@@ -4,4 +4,4 @@
 
 # content
 
-Sample text here. Sample text here. Sample text here. Sampletext here. Sample text here. Sample text here.
+Want to create a website for your business? Our designs are created to cater the best experience for our users while balancing the goals of your business.

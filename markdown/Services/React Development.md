@@ -4,4 +4,4 @@
 
 # content
 
-Sample text here. Sample text here. Sample text here. Sampletext here. Sample text here. Sample text here.
+We create interactive user interfaces using React. React is a declarative, efficient, and flexible JavaScript library perfect for building your website.

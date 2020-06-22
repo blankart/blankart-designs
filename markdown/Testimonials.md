@@ -1,1 +1,1 @@
-Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+Blankart Designs has been in the industry for 8 years and our top priority is our client's satisfaction. Here are some stories from our previous clients.
