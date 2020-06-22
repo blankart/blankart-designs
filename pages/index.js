@@ -7,9 +7,12 @@ import Wrapper from "../components/Wrapper";
 import Container from "../components/Container";
 import CardImage from "../components/CardImage";
 import Page from "../components/Page";
-import ServiceItem from "../components/ServiceItem";
 import Head from "next/head";
 import Services from "../components/Services";
+import ImageSection from "../components/ImageSection";
+import SideText from "../components/SideText";
+import BlockText from "../components/BlockText";
+import ColumnText from "../components/ColumnText";
 
 const servicesList = [
   {
@@ -61,88 +64,40 @@ const Index = () => {
           >
             <Wrapper>
               <Container overflow="visible">
-                <Box
-                  align="center"
-                  justify="center"
-                  direction="row"
-                  // direction="column"
-                  wrap={false}
-                  gap="large"
-                  style={{ marginTop: "-25px" }}
-                >
+                <ImageSection>
                   <CardImage src="/t-shirt mockup.jpg" />
-                  <Box
-                    align="center"
-                    justify="center"
-                    gap="large"
-                    pad={{ top: "xlarge" }}
-                  >
-                    <Box align="stretch" justify="center" width="large">
-                      <Text
-                        color="background-front"
-                        style={{
-                          fontFamily: "Montserrat Black",
-                          fontSize: "60px",
-                        }}
-                        size="xxlarge"
-                        textAlign="start"
-                      >
-                        What do we offer?
-                      </Text>
-                      <Paragraph size="large" color="dark-4" textAlign="start">
+                  <SideText>
+                    <BlockText
+                      width="large"
+                      title="What do we offer?"
+                      content="
                         Sample text here. Sample text here. Sample text here.
                         Sample text here. Sample text here. Sample text here.
                         Sample text here. Sample text here. Sample text here.
-                      </Paragraph>
-                    </Box>
-                    <Box align="start" justify="start" direction="row">
-                      <Box align="stretch" justify="start" width="medium">
-                        <Text
-                          color="background-front"
-                          style={{
-                            fontFamily: "Montserrat Black",
-                            fontSize: "60px",
-                          }}
-                          size="xxlarge"
-                          textAlign="start"
-                        >
-                          Text
-                        </Text>
-                        <Paragraph
-                          size="large"
-                          color="dark-4"
-                          textAlign="start"
-                        >
+                    "
+                    />
+                    <ColumnText>
+                      <BlockText
+                        width="medium"
+                        title="Text"
+                        content="
                           Sample text here. Sample text here. Sample text here.
                           Sample text here. Sample text here. Sample text here.
                           Sample text here. Sample text here. Sample text here.
-                        </Paragraph>
-                      </Box>
-                      <Box align="stretch" justify="start" width="medium">
-                        <Text
-                          color="background-front"
-                          style={{
-                            fontFamily: "Montserrat Black",
-                            fontSize: "60px",
-                          }}
-                          size="xxlarge"
-                          textAlign="start"
-                        >
-                          Text
-                        </Text>
-                        <Paragraph
-                          size="large"
-                          color="dark-4"
-                          textAlign="start"
-                        >
+                    "
+                      />
+                      <BlockText
+                        width="medium"
+                        title="Text"
+                        content="
                           Sample text here. Sample text here. Sample text here.
                           Sample text here. Sample text here. Sample text here.
                           Sample text here. Sample text here. Sample text here.
-                        </Paragraph>
-                      </Box>
-                    </Box>
-                  </Box>
-                </Box>
+                    "
+                      />
+                    </ColumnText>
+                  </SideText>
+                </ImageSection>
               </Container>
             </Wrapper>
           </PageSection>

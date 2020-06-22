@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Navbar from "../components/Navbar";
 import indexTheme from "../themes/indexTheme";
 import Wrapper from "../components/Wrapper";
@@ -9,18 +10,23 @@ import { Grommet } from "grommet";
 
 const Contact = () => {
   return (
-    <Grommet full theme={indexTheme}>
-      <Page>
-        <PageSection background="/BG.png">
-          <Wrapper>
-            <Container>
-              <Navbar />
-              <MainHeading>CONTACT PAGE.</MainHeading>
-            </Container>
-          </Wrapper>
-        </PageSection>
-      </Page>
-    </Grommet>
+    <React.Fragment>
+      <Head>
+        <title>Contact Us - Blankart Designs</title>
+      </Head>
+      <Grommet full theme={indexTheme}>
+        <Page>
+          <PageSection background="/BG.png">
+            <Wrapper>
+              <Container>
+                <Navbar />
+                <MainHeading>CONTACT PAGE.</MainHeading>
+              </Container>
+            </Wrapper>
+          </PageSection>
+        </Page>
+      </Grommet>
+    </React.Fragment>
   );
 };
 

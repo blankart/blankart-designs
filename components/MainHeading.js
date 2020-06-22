@@ -4,7 +4,7 @@ import { useContext, useMemo } from "react";
 const MainHeading = ({ children, ...args }) => {
   const size = useContext(ResponsiveContext);
   const fontSize = useMemo(
-    () => (size === "large" ? "100px" : size === "medium" ? "90px" : "70px"),
+    () => (size === "large" ? "80px" : size === "medium" ? "70px" : "50px"),
     [size]
   );
   const justify = useMemo(() => (size === "large" ? "start" : "center"), [
@@ -21,7 +21,7 @@ const MainHeading = ({ children, ...args }) => {
     >
       <Heading
         style={{
-          fontFamily: "Montserrat Black",
+          fontFamily: "Montserrat Black, Montserrat",
           fontSize,
           background:
             "-webkit-linear-gradient( 0deg, rgb(140,72,54) 0%, rgb(255,50,50) 0%, rgb(239,71,126) 99%)",

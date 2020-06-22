@@ -31,7 +31,11 @@ const Navbar = () => {
       <Box align="center" justify="center">
         <Link href="/">
           <a>
-            <Image src="/Logo-Page.png" fill="horizontal" />
+            <Image
+              src="/Logo-Page.png"
+              style={{ width: size === "small" ? "25px" : null }}
+              fill="horizontal"
+            />
           </a>
         </Link>
       </Box>
@@ -75,6 +79,7 @@ const Navbar = () => {
           disabled={false}
           color="status-critical"
           primary={false}
+          size={size === "small" ? "xsmall" : "medium"}
         />
       </Box>
     </Nav>
