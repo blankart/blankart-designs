@@ -10,7 +10,7 @@ const ServiceItem = ({ src, title, content, ...args }) => {
       {...args}
       {...hoverBinder}
       align="center"
-      justify="center"
+      justify="start"
       gap="small"
       width="medium"
       style={hoverStyle}
