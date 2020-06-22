@@ -9,6 +9,7 @@ const Wrapper = ({ children, ...args }) => {
   );
   return (
     <Box
+      width="xxlarge"
       align="center"
       justify="center"
       pad={{
