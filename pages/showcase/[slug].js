@@ -10,10 +10,18 @@ import { Grommet } from "grommet";
 import BlockText from "../../components/BlockText";
 import CardImage from "../../components/CardImage";
 import SideText from "../../components/SideText";
+import ImageSection from "../../components/ImageSection";
+import Testimonials from "../../components/Testimonials";
 import fs from "fs";
 import md2json from "md-2-json";
 
-export default ({ slug, description, images }) => {
+export default ({
+  slug,
+  description,
+  images,
+  testimonials,
+  testimonialsText,
+}) => {
   return (
     <React.Fragment>
       <Head>
@@ -59,6 +67,21 @@ export default ({ slug, description, images }) => {
               </SideText>
             </Wrapper>
           </PageSection>
+          <PageSection>
+            <Wrapper>
+              <Container animation={{ type: "slideUp", delay: "200" }}>
+                <ImageSection>
+                  <SideText>
+                    <BlockText
+                      title="Testimonials"
+                      content={testimonialsText}
+                    />
+                  </SideText>
+                  <Testimonials data={testimonials} />
+                </ImageSection>
+              </Container>
+            </Wrapper>
+          </PageSection>
         </Page>
       </Grommet>
     </React.Fragment>
@@ -67,6 +90,22 @@ export default ({ slug, description, images }) => {
 
 export function getStaticProps({ params }) {
   const { slug } = params;
+  const testimonialsFile = fs.readdirSync("./markdown/Testimonials");
+  const testimonialsText = fs.readFileSync(
+    "./markdown/Testimonials.md",
+    "utf8"
+  );
+  let testimonials = [];
+  for (const [index, testimonial] of testimonialsFile.entries()) {
+    let fixObj = {};
+    const data = md2json.parse(
+      fs.readFileSync(`./markdown/Testimonials/${testimonial}`, "utf8")
+    );
+    for (const propertyName in data) {
+      fixObj[propertyName] = data[propertyName].raw;
+    }
+    testimonials.push(fixObj);
+  }
   const images = fs
     .readdirSync(`./markdown/Portfolio/${slug}`)
     .filter((val) => val != "Index.md")
@@ -82,6 +121,8 @@ export function getStaticProps({ params }) {
   }
   return {
     props: {
+      testimonials,
+      testimonialsText,
       images,
       slug,
       description: fixObj["description"],

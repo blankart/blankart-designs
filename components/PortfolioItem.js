@@ -1,38 +1,16 @@
 import { Box, ResponsiveContext, Text, Paragraph } from "grommet";
 import { useContext, useState } from "react";
+import usePortfolioHover from "../hooks/usePortfolioHover";
 import Link from "next/link";
 
 const PortfolioItem = ({ image, description, index, label, ...args }) => {
   const size = useContext(ResponsiveContext);
-  const [tempStyle, setTempStyle] = useState({});
-  const [hovered, setHovered] = useState(false);
   const url = React.useMemo(
     () => require(`../markdown/Portfolio/${label}/${image}`),
     [label, image]
   );
+  const [hoverStyle, hoverBinder, hovered] = usePortfolioHover(url);
 
-  const binder = {
-    onMouseEnter: () => {
-      setHovered(true);
-      setTempStyle({
-        transition: "background-size 0.5s ",
-        backgroundSize: "1000px",
-        backgroundColor: "white",
-        backgroundImage: `url('${url}')`,
-        backgroundPosition: "center",
-      });
-    },
-    onMouseLeave: () => {
-      setHovered(false);
-      setTempStyle({
-        transition: "background-size 0.3s ",
-        backgroundSize: "800px",
-        backgroundColor: "white",
-        backgroundImage: `url('${url}')`,
-        backgroundPosition: "center",
-      });
-    },
-  };
   return (
     <Link href={`/showcase/${label}`}>
       <Box
@@ -47,9 +25,9 @@ const PortfolioItem = ({ image, description, index, label, ...args }) => {
           height: "300px",
           width:
             size === "medium" ? "300px" : size === "large" ? "370px" : "450px",
-          ...tempStyle,
+          ...hoverStyle,
         }}
-        {...binder}
+        {...hoverBinder}
         round="medium"
         elevation="xlarge"
         hoverIndicator={false}
