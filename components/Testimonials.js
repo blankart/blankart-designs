@@ -10,7 +10,7 @@ const Testimonials = ({ data, ...args }) => {
           <Box
             align="center"
             style={{
-              width: "700px",
+              maxWidth: "700px",
             }}
             height="medium"
             justify="center"
