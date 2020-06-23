@@ -1,5 +1,5 @@
 import { Box, ResponsiveContext, Text, Paragraph } from "grommet";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import usePortfolioHover from "../hooks/usePortfolioHover";
 import Link from "next/link";
 

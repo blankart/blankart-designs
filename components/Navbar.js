@@ -53,6 +53,8 @@ const Navbar = () => {
           plain={true}
           style={{
             backgroundColor: "#0e0e0e",
+            position: "absolute",
+            zIndex: "1000",
           }}
           responsive={false}
         >
