@@ -24,4 +24,4 @@ Performance
 
 # content3
 
-The performance of our creations are also a top priority in Blankart designs. We take into account the long term use of our products. Thus, we make sure that our products are always readable, maintainable, and reusable for future expansions without sacrificing it's performance.
+The performance of our creations are also a top priority in Blankart Designs. We take into account the long term use of our products. Thus, we make sure that our products are always readable, maintainable, and reusable for future expansions without sacrificing it's performance.
