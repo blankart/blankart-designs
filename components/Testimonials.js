@@ -7,7 +7,15 @@ const Testimonials = ({ data, ...args }) => {
     <Carousel pad="large" controls="selectors" play={5000}>
       {data &&
         data.map((testimonial) => (
-          <Box align="center" justify="center" margin="xlarge">
+          <Box
+            align="center"
+            style={{
+              width: "700px",
+            }}
+            height="medium"
+            justify="center"
+            margin="xlarge"
+          >
             <Image
               src={testimonial.image}
               style={{
@@ -24,7 +32,7 @@ const Testimonials = ({ data, ...args }) => {
               color="dark-4"
               textAlign="center"
             >
-              {testimonial.message}
+              "{testimonial.message}"
             </Paragraph>
             <Paragraph
               margin="xxlarge"

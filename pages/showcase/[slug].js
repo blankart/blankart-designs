@@ -14,6 +14,7 @@ import ImageSection from "../../components/ImageSection";
 import Testimonials from "../../components/Testimonials";
 import fs from "fs";
 import md2json from "md-2-json";
+import Footer from "../../components/Footer";
 
 export default ({
   slug,
@@ -82,6 +83,7 @@ export default ({
               </Container>
             </Wrapper>
           </PageSection>
+          <Footer />
         </Page>
       </Grommet>
     </React.Fragment>

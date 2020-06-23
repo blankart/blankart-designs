@@ -25,10 +25,6 @@ const items = [
     label: "Showcase",
     path: "/showcase",
   },
-  {
-    label: "Contact",
-    path: "/contact",
-  },
 ];
 
 const Navbar = () => {
@@ -45,7 +41,7 @@ const Navbar = () => {
       width="xxlarge"
       pad={{ horizontal: "xsmall", top: "large", bottom: "large" }}
     >
-      {onShow && (
+      {onShow && size !== "large" && (
         <Layer
           onEsc={() => setOnShow(false)}
           full={true}
@@ -93,6 +89,32 @@ const Navbar = () => {
                       </Box>
                     </Link>
                   ))}
+                <a
+                  href="mailto:blankartwp@gmail.com?subject=Inquiries:%20Blankart%20Designs"
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  <Box
+                    focusIndicator={false}
+                    align="center"
+                    animation={{
+                      type: "fadeIn",
+                      delay: 100 * items.length,
+                    }}
+                  >
+                    <Text
+                      margin="large"
+                      style={{
+                        fontSize: "35px",
+                        textAlign: "center",
+                      }}
+                      color="background-front"
+                    >
+                      Hire Us
+                    </Text>
+                  </Box>
+                </a>
               </Container>
             </Wrapper>
           </Page>
@@ -126,29 +148,31 @@ const Navbar = () => {
               </a>
             </Link>
           ))}
-        <Button
-          label="HIRE US"
-          {...hoverBinder}
-          active={false}
-          gap="medium"
-          hoverIndicator={false}
-          plain={false}
-          style={{
-            ...hoverStyle,
-            backgroundColor: "#0e0e0e",
-            color: "white",
-            borderRadius: "10px",
-            fontWeight: "600",
-            backgroundImage:
-              "-webkit-linear-gradient( 0deg, rgb(140,72,54) 0%, rgb(255,50,50) 0%, rgb(239,71,126) 99%)",
-          }}
-          reverse={false}
-          secondary={false}
-          disabled={false}
-          color="status-critical"
-          primary={false}
-          size={size === "small" ? "xsmall" : "medium"}
-        />
+        <a href="mailto:blankartwp@gmail.com?subject=Inquiries:%20Blankart%20Designs">
+          <Button
+            label="HIRE US"
+            {...hoverBinder}
+            active={false}
+            gap="medium"
+            hoverIndicator={false}
+            plain={false}
+            style={{
+              ...hoverStyle,
+              backgroundColor: "#0e0e0e",
+              color: "white",
+              borderRadius: "10px",
+              fontWeight: "600",
+              backgroundImage:
+                "-webkit-linear-gradient( 0deg, rgb(140,72,54) 0%, rgb(255,50,50) 0%, rgb(239,71,126) 99%)",
+            }}
+            reverse={false}
+            secondary={false}
+            disabled={false}
+            color="status-critical"
+            primary={false}
+            size={size === "small" ? "xsmall" : "medium"}
+          />
+        </a>
         {size !== "large" && (
           <Box onClick={() => setOnShow(true)}>
             <Menu color="white" size="medium" />

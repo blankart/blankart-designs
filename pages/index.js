@@ -1,4 +1,4 @@
-import { Grommet } from "grommet";
+import { Grommet, Box } from "grommet";
 import fs from "fs";
 import md2json from "md-2-json";
 import indexTheme from "../themes/indexTheme";
@@ -17,6 +17,7 @@ import BlockText from "../components/BlockText";
 import ColumnText from "../components/ColumnText";
 import Testimonials from "../components/Testimonials";
 import Subheading from "../components/Subheading";
+import Footer from "../components/Footer";
 
 const Index = ({
   subheading,
@@ -95,6 +96,7 @@ const Index = ({
               </Container>
             </Wrapper>
           </PageSection>
+          <Footer />
         </Page>
       </Grommet>
     </React.Fragment>

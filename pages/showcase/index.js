@@ -11,6 +11,7 @@ import BlockText from "../../components/BlockText";
 import Portfolio from "../../components/Portfolio";
 import fs from "fs";
 import md2json from "md-2-json";
+import Footer from "../../components/Footer";
 
 const Showcase = ({ categories, heading }) => {
   return (
@@ -50,6 +51,7 @@ const Showcase = ({ categories, heading }) => {
               />
             </Wrapper>
           </PageSection>
+          <Footer style={{ backgroundColor: "black", marginTop: "0" }} />
         </Page>
       </Grommet>
     </React.Fragment>

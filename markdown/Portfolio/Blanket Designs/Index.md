@@ -1,6 +1,6 @@
 # description
 
-A short description here
+These are some of the Blanket Designs we made for a client.
 
 # image
 

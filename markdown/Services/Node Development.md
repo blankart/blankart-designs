@@ -4,4 +4,4 @@
 
 # content
 
-Sample text here. Sample text here. Sample text here. Sampletext here. Sample text here. Sample text here.
+We build optimized and secured back-end server using NodeJS + ExpressJS. We make sure that all components will go through unit testing.
