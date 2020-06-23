@@ -101,7 +101,7 @@ const Index = ({
   );
 };
 
-export function getStaticProps() {
+export async function getStaticProps() {
   const heading = fs.readFileSync("./markdown/Heading.md", "utf8");
   const subheading = fs.readFileSync("./markdown/Subheading.md", "utf8");
   const servicesFile = fs.readdirSync("./markdown/Services");

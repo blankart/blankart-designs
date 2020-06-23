@@ -56,7 +56,7 @@ const Showcase = ({ categories, heading }) => {
   );
 };
 
-export function getStaticProps() {
+export async function getStaticProps() {
   const categoryItems = fs
     .readdirSync("./markdown/Portfolio")
     .filter((val) => val !== "Heading.md");

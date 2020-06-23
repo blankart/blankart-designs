@@ -88,7 +88,7 @@ export default ({
   );
 };
 
-export function getStaticProps({ params }) {
+export async function getStaticProps({ params }) {
   const { slug } = params;
   const testimonialsFile = fs.readdirSync("./markdown/Testimonials");
   const testimonialsText = fs.readFileSync(

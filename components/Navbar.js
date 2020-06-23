@@ -122,7 +122,7 @@ const Navbar = () => {
           items.map((item) => (
             <Link key={item.path} href={item.path}>
               <a>
-                <NavLink label={item.label} />
+                <NavLink path={item.path} label={item.label} />
               </a>
             </Link>
           ))}
@@ -137,6 +137,7 @@ const Navbar = () => {
             ...hoverStyle,
             backgroundColor: "#0e0e0e",
             color: "white",
+            borderRadius: "10px",
             fontWeight: "600",
             backgroundImage:
               "-webkit-linear-gradient( 0deg, rgb(140,72,54) 0%, rgb(255,50,50) 0%, rgb(239,71,126) 99%)",

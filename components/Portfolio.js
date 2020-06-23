@@ -2,41 +2,6 @@ import { ResponsiveContext, Box } from "grommet";
 import { useContext, useMemo } from "react";
 import PortfolioItem from "./PortfolioItem";
 
-const dummyData = [
-  {
-    label: "T-Shirt Designs",
-    image: "/index images/t-shirt1.jpg",
-  },
-  {
-    label: "T-Shirt Designs 2",
-    image: "/index images/t-shirt2.jpg",
-  },
-  {
-    label: "T-Shirt Designs 3",
-    image: "/index images/t-shirt3.jpg",
-  },
-  {
-    label: "T-Shirt Designs 4",
-    image: "/index images/t-shirt2.jpg",
-  },
-  {
-    label: "T-Shirt Designs 5",
-    image: "/index images/t-shirt1.jpg",
-  },
-  {
-    label: "T-Shirt Designs 6",
-    image: "/index images/t-shirt2.jpg",
-  },
-  {
-    label: "T-Shirt Designs 7",
-    image: "/index images/t-shirt3.jpg",
-  },
-  {
-    label: "T-Shirt Designs 8",
-    image: "/index images/t-shirt2.jpg",
-  },
-];
-
 const Portfolio = ({ data, ...args }) => {
   const size = useContext(ResponsiveContext);
   const largeSlicedData = useMemo(() => {
