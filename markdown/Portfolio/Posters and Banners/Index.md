@@ -1,6 +1,6 @@
 # description
 
-A short description here
+We design eye catching posters and banners in line with our client's theme.
 
 # image
 

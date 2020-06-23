@@ -1,6 +1,6 @@
 # description
 
-T-shirt Design is our strongest field. We have worked on hundreds of projects for a client. We specialize working on t-shirt designs for online platforms such as Redbubble, Merch by Amazon, and TeeSpring.
+Casual apparel is one of our expertise. We can transform any idea into graphic designs ready to be printed on clothing.
 
 # image
 

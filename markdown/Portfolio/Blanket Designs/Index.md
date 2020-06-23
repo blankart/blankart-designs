@@ -1,6 +1,6 @@
 # description
 
-These are some of the Blanket Designs we made for a client.
+Want to sleep cozy at night? Here are some Blanket Designs we made for a client.
 
 # image
 
