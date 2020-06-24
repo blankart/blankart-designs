@@ -16,7 +16,7 @@ Quality
 
 # content2
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+In Blankart Designs, we value the quality of our products. We always make sure to deliver the best of the best our minds can offer while valuing the ideas and opinions of our clients. With Blankart Designs, we assure you top quality products that will transform your ideas into reality.
 
 # heading3
 
@@ -24,4 +24,4 @@ Performance
 
 # content3
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+The performance of our creations are also a top priority in Blankart Designs. We take into account the long term use of our products. Thus, we make sure that our products are always readable, maintainable, and reusable for future expansions without sacrificing it's performance.

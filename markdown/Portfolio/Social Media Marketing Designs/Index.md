@@ -1,6 +1,6 @@
 # description
 
-A short description here
+We create graphic designs to help spice up social meedia posts.
 
 # image
 
